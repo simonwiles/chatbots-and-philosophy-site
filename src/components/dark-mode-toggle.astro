@@ -16,6 +16,7 @@ input#dark-mode {
   display: block;
   height: 22px;
   position: relative;
+  transition: border-color 0.5s ease-in-out;
   width: 50px;
 }
 
@@ -28,7 +29,7 @@ input#dark-mode {
   overflow: hidden;
   position: absolute;
   top: 2px;
-  transition: all 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, transform 0.3s ease-in-out, backround-color 0.5s ease;
   width: 16px;
 }
 
@@ -57,18 +58,18 @@ input#dark-mode:checked ~ #dark-mode-toggle .toggle-indicator {
 <style global>
 input#dark-mode:checked ~ main {
     background: var(--dark-navy);
-    color: var(--off-white);
+    color: var(--green);
 }
 
 @media (prefers-color-scheme: dark) {
   main {
     background: var(--dark-navy);
-    color: var(--off-white);
+    color: var(--green);
   }
 }
 </style>
 
-<input type="checkbox" id="dark-mode">
+<input type="checkbox" id="dark-mode" checked>
 <label id="dark-mode-toggle" for="dark-mode">
   <span class="toggle-border">
     <span class="toggle-indicator">&nbsp;</span>
