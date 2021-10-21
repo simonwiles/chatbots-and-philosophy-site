@@ -24,11 +24,11 @@
 
 }
 
-body {
+main {
   background: var(--off-white);
   color: var(--dark-navy);
   min-height: 100vh;
   padding: 2rem;
+  transition: color 1s ease, background 1s ease;
   width: 100%;
 }
-

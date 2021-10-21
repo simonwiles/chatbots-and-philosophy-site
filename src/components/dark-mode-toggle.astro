@@ -1,0 +1,76 @@
+<style>
+input#dark-mode {
+  display: none;
+}
+
+#dark-mode-toggle {
+  float: right;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+#dark-mode-toggle .toggle-border {
+  border-radius: 20px;
+  border: 1px solid var(--dark-navy);
+  display: block;
+  height: 22px;
+  position: relative;
+  width: 50px;
+}
+
+#dark-mode-toggle .toggle-indicator {
+  background-color: var(--dark-navy);
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 16px;
+  left: 2px;
+  overflow: hidden;
+  position: absolute;
+  top: 2px;
+  transition: all 0.3s ease-in-out;
+  width: 16px;
+}
+
+#dark-mode-toggle .toggle-indicator::after {
+  background-color: var(--dark-navy);
+  border-radius: 50%;
+  bottom: -3px;
+  content: "";
+  height: 14px;
+  position: absolute;
+  right: 5px;
+  width: 14px;
+}
+
+input#dark-mode:checked ~ #dark-mode-toggle .toggle-border {
+  border-color: var(--off-white);
+}
+
+input#dark-mode:checked ~ #dark-mode-toggle .toggle-indicator {
+  background-color: var(--off-white);
+  left: calc(50px - 22px);
+  transform: rotate(180deg);
+}
+</style>
+
+<style global>
+input#dark-mode:checked ~ main {
+    background: var(--dark-navy);
+    color: var(--off-white);
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    background: var(--dark-navy);
+    color: var(--off-white);
+  }
+}
+</style>
+
+<input type="checkbox" id="dark-mode">
+<label id="dark-mode-toggle" for="dark-mode">
+  <span class="toggle-border">
+    <span class="toggle-indicator">&nbsp;</span>
+  </span>
+</label>
