@@ -80,7 +80,17 @@ let banner = style1;
 	}
 }
 
+:global(input#dark-mode:checked ~ main .typing div) {
+  animation-name: typing2;
+}
+
 @keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes typing2 {
   from {
     width: 0
   }
