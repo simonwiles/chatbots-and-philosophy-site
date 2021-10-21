@@ -1,13 +1,21 @@
 ---
+import { execSync } from "node:child_process";
+
 import Header from "../components/header.astro";
 import DarkModeToggle from "../components/dark-mode-toggle.astro";
+
+const commit = execSync("git rev-parse --short HEAD").toString().trim();
+const datetime = new Date().toISOString();
 
 let baseHref = Astro.site.href.replace(/\/$/, "");
 let title = 'Chatbots & Philosophy';
 ---
 <html lang="en">
-<head>
+<head prefix="dcterms: http://purl.org/dc/terms/#">
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="version" content={commit}>
+	<meta name="dcterms.modified" content={datetime}>
 	<meta name="viewport" content="width=device-width">
 	<title>{title}</title>
 
