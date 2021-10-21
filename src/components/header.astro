@@ -1,0 +1,73 @@
+
+
+<style lang="scss">
+.typing {
+	font-family: var(--font-mono);
+	font-size: 0.8vw;
+	line-height: 1;
+	text-align: left;
+	white-space: pre;
+  margin: 2em 0;
+
+	div {
+		animation: typing 0.5s steps(var(--length)) backwards;
+		overflow: hidden;
+		width: calc(var(--length) * 1ch);
+
+		&:nth-of-type(2) {
+			animation-delay: 0.5s;
+		}
+
+		&:nth-of-type(3) {
+			animation-delay: 1s;
+		}
+
+		&:nth-of-type(4) {
+			animation-delay: 1.5s;
+		}
+
+		&:nth-of-type(5) {
+			animation-delay: 2s;
+		}
+
+		&:nth-of-type(6) {
+			animation-delay: 2.5s;
+		}
+
+		&:nth-of-type(7) {
+			animation-delay: 3s;
+		}
+
+		&:nth-of-type(8) {
+			animation-delay: 3.5s;
+		}
+
+		&:nth-of-type(9) {
+			animation-delay: 4s;
+		}
+
+		&:nth-of-type(10) {
+			animation-delay: 4.5s;
+		}
+
+		&:nth-of-type(11) {
+			animation-delay: 5s;
+		}
+	}
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+</style>
+
+
+<div class="typing" style="--length: 162">
+<div> ██████ ██   ██  █████  ████████ ██████   ██████  ████████ ███████        ██        ██████  ██   ██ ██ ██       ██████  ███████  ██████  ██████  ██   ██ ██    ██ </div>
+<div>██      ██   ██ ██   ██    ██    ██   ██ ██    ██    ██    ██             ██        ██   ██ ██   ██ ██ ██      ██    ██ ██      ██    ██ ██   ██ ██   ██  ██  ██  </div>
+<div>██      ███████ ███████    ██    ██████  ██    ██    ██    ███████     ████████     ██████  ███████ ██ ██      ██    ██ ███████ ██    ██ ██████  ███████   ████   </div>
+<div>██      ██   ██ ██   ██    ██    ██   ██ ██    ██    ██         ██     ██  ██       ██      ██   ██ ██ ██      ██    ██      ██ ██    ██ ██      ██   ██    ██    </div>
+<div> ██████ ██   ██ ██   ██    ██    ██████   ██████     ██    ███████     ██████       ██      ██   ██ ██ ███████  ██████  ███████  ██████  ██      ██   ██    ██    </div>
+</div>
