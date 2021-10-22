@@ -35,7 +35,7 @@ main {
   font-size: 28px;
   justify-content: space-between;
   min-height: 100vh;
-  padding: min(2rem, 2%);
+  padding: min(2rem, 2%) min(2rem, 2%) 1rem;
   transition: color 1s ease, background 1s ease;
   width: 100%;
 }
@@ -51,8 +51,10 @@ main > footer {
   font-size: 14px;
   gap: 1em;
   justify-content: flex-end;
-  line-height: 2em;
+  line-height: 1.2em;
+  margin-top: 2em;
   opacity: 0.5;
+  padding: 0 1em;
   transition: opacity 0.3s ease;
 }
 
