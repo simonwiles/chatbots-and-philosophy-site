@@ -26,9 +26,47 @@
     monospace;
 }
 
+a {
+  color: var(--foreground);
+  text-decoration-color: var(--anchor-alt);
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1.5px;
+  transition: color 1s ease, text-decoration-color 1s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+article a[href*="//"]::after
+{
+  background-color: var(--anchor-alt);
+  content: "";
+  display: inline-block;
+  height: 0.8rem;
+  margin-left: 8px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E")
+    no-repeat 50% 50%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'/%3E%3C/svg%3E")
+    no-repeat 50% 50%;
+  transition: background-color 1s ease;
+  width: 0.8rem;
+}
+
+article a[href*="//"]:hover::after
+{
+  background-color: var(--foreground);
+}
+
 main {
-  background: var(--off-white);
-  color: var(--dark-navy);
+  --anchor-alt: fuchsia;
+  --background: var(--off-white);
+  --foreground: var(--dark-navy);
+  background: var(--background);
+  color: var(--foreground);
   display: flex;
   flex-direction: column;
   font-family: "VT323", monospace;
@@ -79,6 +117,32 @@ main > footer svg rect {
   fill: grey;
 }
 
+section {
+  margin: 2em min(1rem, 1%);
+  padding-bottom: 2em;
+  position: relative;
+}
+
+section::after {
+  border-bottom: 1px solid var(--foreground);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 10%;
+  position: absolute;
+  width: 80%;
+}
+
+section header {
+  margin-bottom: 1em;
+}
+
+section a {
+  display: block;
+  text-align: right;
+  padding-right: 1em;
+}
+
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -95,4 +159,19 @@ p + p {
 
 ol {
   margin-top: 1em;
+}
+
+
+input#dark-mode:checked ~ main {
+  --anchor-alt: darkorange;
+  --background: var(--dark-navy);
+  --foreground: var(--green);
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    --anchor-alt: darkorange;
+    --background: var(--dark-navy);
+    --foreground: var(--green);
+  }
 }

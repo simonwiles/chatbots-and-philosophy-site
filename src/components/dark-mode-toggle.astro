@@ -57,20 +57,6 @@ input#dark-mode:checked ~ #dark-mode-toggle .toggle-indicator {
 }
 </style>
 
-<style global>
-input#dark-mode:checked ~ main {
-    background: var(--dark-navy);
-    color: var(--green);
-}
-
-@media (prefers-color-scheme: dark) {
-  main {
-    background: var(--dark-navy);
-    color: var(--green);
-  }
-}
-</style>
-
 <input type="checkbox" id="dark-mode" checked>
 <label id="dark-mode-toggle" for="dark-mode">
   <span class="toggle-border">
