@@ -26,6 +26,10 @@
     monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: var(--foreground);
   text-decoration-color: var(--anchor-alt);
@@ -39,8 +43,7 @@ a:hover {
   text-decoration: underline;
 }
 
-article a[href*="//"]::after
-{
+article a[href*="//"]::after {
   background-color: var(--anchor-alt);
   content: "";
   display: inline-block;
@@ -56,8 +59,7 @@ article a[href*="//"]::after
   width: 0.8rem;
 }
 
-article a[href*="//"]:hover::after
-{
+article a[href*="//"]:hover::after {
   background-color: var(--foreground);
 }
 
@@ -139,8 +141,14 @@ section header {
 
 section a {
   display: block;
-  text-align: right;
-  padding-right: 1em;
+  margin-top: 1em;
+  text-align: center;
+}
+
+section a.top {
+  float: right;
+  margin-right: 2em;
+  text-decoration-skip-ink: none;
 }
 
 .visually-hidden:not(:focus):not(:active) {
