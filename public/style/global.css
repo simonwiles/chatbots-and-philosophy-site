@@ -87,8 +87,7 @@ main > article {
 main > footer {
   align-items: center;
   display: flex;
-  font-family: sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   gap: 1em;
   justify-content: flex-end;
   line-height: 1.2em;
