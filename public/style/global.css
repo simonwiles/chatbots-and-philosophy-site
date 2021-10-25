@@ -141,7 +141,7 @@ section header h2 {
   margin-bottom: 1em;
 }
 
-section a {
+section a.chat {
   display: block;
   margin-top: 1em;
   text-align: center;
